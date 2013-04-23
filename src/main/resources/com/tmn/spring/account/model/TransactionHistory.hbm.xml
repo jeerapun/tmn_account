@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.tmn.spring.account.model.TransactionHistory" table="TRANSACTION_HISTORY">
+        <id name="transactionNumber" type="long" column="transaction_number">
+            <generator class="identity" />                
+        </id>
+        <property name="transactionDate" type="timestamp">
+            <column name="transaction_date" />
+        </property>
+        <property name="amount" type="double">
+            <column name="amount" not-null="true" />
+        </property>            
+        <property name="code">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.tmn.spring.account.enumerates.TransactionType</param>
+            </type>
+        </property>
+
+    </class>   
+</hibernate-mapping>

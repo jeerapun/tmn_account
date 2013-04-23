@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.tmn.spring.account.model.Account" table="ACCOUNT">
+        <cache usage="read-write"/>
+        <id name="code" type="string">
+            <column name="code" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" />
+        </property>
+        <property name="balance" type="double">
+            <column name="balance"  not-null="true"  />
+        </property>
+        <set name="transactionHistory" cascade="all" sort="natural" batch-size="10" fetch="select">
+            <key column="account_code"/>
+            <one-to-many class="com.tmn.spring.account.model.TransactionHistory"/>
+        </set>
+    </class>   
+</hibernate-mapping>

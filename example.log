@@ -1,0 +1,2 @@
+INFO http-thread-pool-8080(4) com.ing.life.account.model.AccountRepository - this is a sample log message.
+DEBUG http-thread-pool-8080(4) com.ing.life.account.controller.ListAllAccount - Account Size: 2
