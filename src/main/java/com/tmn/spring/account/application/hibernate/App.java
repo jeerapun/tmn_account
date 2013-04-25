@@ -62,10 +62,19 @@ public class App {
         thirdAccount.getTransactionHistory().add(secondTransaction);
         
         
+        Account fourAccount = new Account();
+        fourAccount.setCode("7777777777");
+        fourAccount.setName("ariya");
+        fourAccount.setBalance(new Double(2000));
+        
+        fourAccount.getTransactionHistory().add(firstTransaction);
+        fourAccount.getTransactionHistory().add(secondTransaction);
+        
+        
         session.save(newAccount);
         session.save(newnewAccount);
         session.save(thirdAccount);
-        
+        session.save(fourAccount);
         session.getTransaction().commit();
         System.out.println("End Run Test");
     }

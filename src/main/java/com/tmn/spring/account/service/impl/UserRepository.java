@@ -21,9 +21,11 @@ public class UserRepository {
         User firstUser = new User("roofimon", "password");
         User secondUser = new User("boyone", "password");
         User thirdUser = new User("jeerapun.m", "1234");
+        User fourUser = new User("ariya", "1234");
         repository.put(firstUser.getUsername(), firstUser);
         repository.put(secondUser.getUsername(), secondUser);
         repository.put(thirdUser.getUsername(), thirdUser);
+        repository.put(fourUser.getUsername(), fourUser);
     }
     
     public User getUserByUsername(String username){

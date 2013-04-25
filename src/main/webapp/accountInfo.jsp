@@ -24,7 +24,7 @@
         </p>
         <p><a href="DepositController?code=${account.code}" class="btn btn-primary btn-large">Deposit</a>
             <a href="DepositController?code=${account.code}" class="btn btn-primary btn-large">Transfer</a>
-            <a href="DepositController?code=${account.code}" class="btn btn-primary btn-large">Withdraw</a></p>
+            <a href="WithdrawController?code=${account.code}" class="btn btn-primary btn-large">Withdraw</a></p>
     </div>
 
 

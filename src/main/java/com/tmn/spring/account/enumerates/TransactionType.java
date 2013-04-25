@@ -10,6 +10,7 @@ package com.tmn.spring.account.enumerates;
  */
 public enum TransactionType {
     DEPOSIT,
+    WITHDRAW,
     TRANSFER,
     UNKNOWN;
 }

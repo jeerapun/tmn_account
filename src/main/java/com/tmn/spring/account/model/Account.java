@@ -63,6 +63,10 @@ public class Account {
     public void deposit(Double amount) {
         this.balance = this.balance + amount;
     }
+    
+    public void withdraw(Double amount) {
+        this.balance = this.balance - amount;
+    }
 
     
     public SortedSet getTransactionHistory() {
