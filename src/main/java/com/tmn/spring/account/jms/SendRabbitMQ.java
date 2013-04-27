@@ -27,9 +27,9 @@ public class SendRabbitMQ {
       System.out.println("step 2.create message into queue connection");
       channel.queueDeclare(QUEUE_NAME, false, false, false, null);
       argv = new String[3];
-      argv[0] = "first";
-      argv[1] = "second";
-      argv[2] = "third";
+      argv[0] = "one1";
+      argv[1] = "two2";
+      argv[2] = "tree3";
       
       String message = getMessage(argv);
       channel.basicPublish("", QUEUE_NAME, null, message.getBytes());

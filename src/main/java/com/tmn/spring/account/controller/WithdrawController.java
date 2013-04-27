@@ -47,7 +47,7 @@ public class WithdrawController extends HttpServlet {
         AccountService accountService = new AccountHibernateImpl();
         
         Account account = accountService.getAccountByCode(code);
-        TransactionHistory newTransaction = new TransactionHistory(new Date(), amount, TransactionType.WITHDRAW);
+        TransactionHistory newTransaction = new TransactionHistory(new Date(), amount * -1, TransactionType.WITHDRAW);
         account.addTransactionHistory(newTransaction);
         
         logger.debug("Account: "+account.getCode()+" Current Balance:"+account.getBalance().toString());

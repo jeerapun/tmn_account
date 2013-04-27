@@ -22,9 +22,12 @@
             <b>Account Code:</b> ${account.balance}
         </div>
         </p>
-        <p><a href="DepositController?code=${account.code}" class="btn btn-primary btn-large">Deposit</a>
-            <a href="DepositController?code=${account.code}" class="btn btn-primary btn-large">Transfer</a>
-            <a href="WithdrawController?code=${account.code}" class="btn btn-primary btn-large">Withdraw</a></p>
+        <p>
+        	<a href="DepositController?code=${account.code}" class="btn btn-primary btn-large">Deposit</a>
+            <a href="TransferController?code=${account.code}" class="btn btn-primary btn-large">Transfer</a>
+            <a href="WithdrawController?code=${account.code}" class="btn btn-primary btn-large">Withdraw</a>
+            <a href="HistoryController?code=${account.code}" class="btn btn-primary btn-large">View History</a>
+        </p>
     </div>
 
 

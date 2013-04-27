@@ -28,22 +28,21 @@ public class App {
         Calendar cal1 = new GregorianCalendar(2008, 01, 01);
        
         session.beginTransaction();
+        
+        //
         Account newAccount = new Account();
 
-        
         newAccount.setCode("1122334455");
         newAccount.setName("roofimon");
         newAccount.setBalance(new Double(100));
         
         TransactionHistory firstTransaction = new TransactionHistory(new SimpleDateFormat("MM/dd/yy").parse("05/18/12"), new Double(10), TransactionType.DEPOSIT);
-        TransactionHistory secondTransaction = new TransactionHistory(new Date(), new Double(5), TransactionType.TRANSFER);
+        TransactionHistory secondTransaction = new TransactionHistory(new Date(), new Double(5)* -1, TransactionType.TRANSFER);
        
         newAccount.getTransactionHistory().add(firstTransaction);
         newAccount.getTransactionHistory().add(secondTransaction);
-        
-        System.out.println("Before Save: "+newAccount.getTransactionHistory().size());
-
-        
+        session.save(newAccount);
+        //
         Account newnewAccount = new Account();
         newnewAccount.setCode("6677889900");
         newnewAccount.setName("manon");
@@ -51,8 +50,8 @@ public class App {
         
         newnewAccount.getTransactionHistory().add(firstTransaction);
         newnewAccount.getTransactionHistory().add(secondTransaction);
-        
-        
+        session.save(newnewAccount);
+        //
         Account thirdAccount = new Account();
         thirdAccount.setCode("1234567890");
         thirdAccount.setName("jeerapun");
@@ -60,22 +59,21 @@ public class App {
         
         thirdAccount.getTransactionHistory().add(firstTransaction);
         thirdAccount.getTransactionHistory().add(secondTransaction);
-        
-        
+        session.save(thirdAccount);
+
+        //
         Account fourAccount = new Account();
         fourAccount.setCode("7777777777");
         fourAccount.setName("ariya");
         fourAccount.setBalance(new Double(2000));
         
         fourAccount.getTransactionHistory().add(firstTransaction);
-        fourAccount.getTransactionHistory().add(secondTransaction);
-        
-        
-        session.save(newAccount);
-        session.save(newnewAccount);
-        session.save(thirdAccount);
+        fourAccount.getTransactionHistory().add(secondTransaction);        
         session.save(fourAccount);
+        
+        
         session.getTransaction().commit();
+        
         System.out.println("End Run Test");
     }
     

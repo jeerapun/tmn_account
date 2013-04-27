@@ -19,7 +19,7 @@
             <c:forEach var="account" items="${allAccount}">  
                 <tr>
                     <td>1</td>
-                    <td><a href="./DepositController?code=${account.code}">${account.code}</a></td>
+                    <td><a href="./AccountInfoController?code=${account.code}">${account.code}</a></td>
                     <td>${account.name}</td>
                     <td align="right"><fmt:formatNumber type="number" maxFractionDigits="2"  value="${account.balance}" /></td>
                 </tr>
